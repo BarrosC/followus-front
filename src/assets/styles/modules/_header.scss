@@ -1,0 +1,41 @@
+.main-header {
+  background-color: $default-green;
+  
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .header-logo {
+  
+    a {
+      display: block;
+    }
+    
+    img {
+      display: inline-block;
+      height: 60px;
+      width: auto;
+      margin: 2px;
+      vertical-align: middle;
+    }
+  }
+
+  .header-links {
+    margin-left: auto;
+
+    li {
+      display: inline-block;
+      margin: 0 2px;
+    }
+
+    a {
+      transition: background-color 300ms ease-in-out;
+      padding: 10px 20px;
+
+      &:hover {
+        background-color: rgba($color: #000000, $alpha: .5);
+      }
+    }
+  }
+}

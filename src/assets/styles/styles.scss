@@ -1,0 +1,14 @@
+// Vendor
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+// Base imports
+@import "reset";
+@import "base";
+
+// Partials
+@import "partials/colors";
+
+// Modules
+@import "modules/header";
+
+//Layouts

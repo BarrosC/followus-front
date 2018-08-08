@@ -1,15 +1,15 @@
-<mat-toolbar class="main-header">
+<mat-toolbar class="main-header" id="main-header">
   <h1 class="header-logo">
     <a routerLink="/">
-      <img src="/assets/images/logo.png" alt="FollowUs" />
-
-      FollowUs
+      FollowUs <img src="/assets/images/logo.png" alt="FollowUs" />
     </a>
   </h1>
 
   <ul class="header-links">
-    <li><a routerLink="/login">Sobre Nós</a></li>
-    <li><a routerLink="/login">Contato</a></li>
-    <li><a routerLink="/login">Entrar</a></li>
+    <li>
+      <a routerLink="/login">
+        <i class="material-icons">face</i> Entrar
+      </a>
+    </li>
   </ul>
 </mat-toolbar>

@@ -7,9 +7,11 @@
 
 // Partials
 @import "partials/colors";
+@import "partials/grid";
 
 // Modules
 @import "modules/header";
 @import "modules/footer";
 
 //Layouts
+@import "layouts/home";

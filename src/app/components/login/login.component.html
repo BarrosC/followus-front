@@ -1,3 +1,26 @@
-<p>
-  login works!
-</p>
+<section class="access-page">
+
+  <mat-card class="form-container">
+
+    <figure class="logo-image">
+      <img src="/assets/images/logo.png" alt="FollowUs" />
+
+      <figcaption>
+        Follow Us
+      </figcaption>
+    </figure>
+
+    <form class="content-form">
+      <mat-form-field>
+        <input matInput placeholder="E-mail">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="password" matInput placeholder="Senha">
+      </mat-form-field>
+      <button mat-raised-button class="action-button" color="primary" routerLink="/">Entrar</button>
+      <p class="signup-text">ou <a routerLink="/signup">clique aqui</a> e cadastre-se</p>
+    </form>
+
+  </mat-card>
+
+</section>

@@ -1,0 +1,60 @@
+.access-page {
+  background-color: $default-dark-blue;
+  height: 100vh;
+  width: 100%;
+  margin-top: -64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .form-container {
+    width: 100%;
+    max-width: 400px;
+
+    .logo-image {
+      text-align: center;
+
+      img {
+        width: 100%;
+        max-width: 100px;
+      }
+
+      figcaption {
+        font-size: 25px;
+        color: $default-orange;
+      }
+    }
+
+    .content-form {
+      width: 100%;
+      margin-top: 20px;
+
+      .mat-form-field {
+        width: 100%;
+      }
+
+      .action-button {
+        display: block;
+        background-color: $default-orange;
+        width: 75%;
+        margin: 40px auto;
+      }
+
+      .signup-text {
+        text-align: center;
+
+        a {
+          transition: opacity 300ms ease-in-out;
+          text-decoration: none;
+          color: $default-orange;
+          font-weight: bold;
+          opacity: .75;
+
+          &:hover {
+            opacity: 1;            
+          }
+        }
+      }
+    }
+  }
+}

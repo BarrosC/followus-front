@@ -9,9 +9,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   
   constructor(private router: Router){
-
   }
-  checkLocation() {
-    return this.router.url !== '/login' && this.router.url !== '/signup'
+
+  checkHomeLocation() {
+    return this.router.url === '/';
+  }
+
+  checkNoMenuLocations() {
+    return !(this.router.url === '/' || this.router.url === '/login' || this.router.url === '/signup');
   }
 }

@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -14,6 +15,9 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './base/header/header.component';
 import { FooterComponent } from './base/footer/footer.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SidenavMenuComponent } from './base/sidenav-menu/sidenav-menu.component';
+import { EventosComponent } from './components/eventos/eventos.component';
 
 const appRoutes: Routes = [
   {
@@ -27,7 +31,16 @@ const appRoutes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
-  }
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
+    path: 'eventos',
+    component: EventosComponent
+  },
+  { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -37,7 +50,10 @@ const appRoutes: Routes = [
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    SignupComponent
+    SignupComponent,
+    DashboardComponent,
+    SidenavMenuComponent,
+    EventosComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +65,8 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

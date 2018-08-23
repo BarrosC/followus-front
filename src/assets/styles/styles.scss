@@ -1,18 +1,20 @@
 // Vendor
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
-// Base imports
-@import "reset";
-@import "base";
-
 // Partials
 @import "partials/colors";
 @import "partials/grid";
 
+// Base imports
+@import "reset";
+@import "base";
+
 // Modules
 @import "modules/header";
 @import "modules/footer";
+@import "modules/sidenav";
 
 //Layouts
+@import "layouts/base";
 @import "layouts/home";
 @import "layouts/access";

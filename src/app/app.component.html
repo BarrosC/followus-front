@@ -1,10 +1,18 @@
 <!-- Main Header -->
-<app-header *ngIf="checkLocation()"></app-header>
+<app-header *ngIf="checkHomeLocation()"></app-header>
 
 <!-- Main Content -->
-<main class="main-container">
-  <router-outlet></router-outlet>
+<main class="main-container" [ngClass]="{'home-container':checkHomeLocation()}">
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" [opened]="checkNoMenuLocations()">
+      <app-sidenav-menu></app-sidenav-menu>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </main>
 
 <!-- Main Footer -->
-<app-footer *ngIf="checkLocation()"></app-footer>
+<app-footer *ngIf="checkHomeLocation()"></app-footer>

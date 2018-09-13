@@ -20,6 +20,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SidenavMenuComponent } from './base/sidenav-menu/sidenav-menu.component';
 import { EventosComponent } from './components/eventos/eventos.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+import { NoticiasComponent } from './components/noticias/noticias.component';
 
 const appRoutes: Routes = [
   {
@@ -56,7 +57,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     SidenavMenuComponent,
     EventosComponent,
-    PerfilComponent
+    PerfilComponent,
+    NoticiasComponent
   ],
   imports: [
     BrowserModule,

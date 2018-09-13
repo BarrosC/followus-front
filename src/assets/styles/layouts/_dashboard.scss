@@ -1,0 +1,28 @@
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  
+  .default-grid {
+    flex-grow: 1;
+  }
+
+  .card-link {
+    transition: color 200ms ease-in-out;
+    color: $default-dark-gray;
+    text-decoration: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+      color: $default-orange;
+    }
+
+    i.align-center {
+      display: inline-block;
+      vertical-align: middle;
+      margin-top: -8px;
+    }
+  }
+}

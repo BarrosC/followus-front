@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -18,6 +19,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SidenavMenuComponent } from './base/sidenav-menu/sidenav-menu.component';
 import { EventosComponent } from './components/eventos/eventos.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 const appRoutes: Routes = [
   {
@@ -53,7 +55,8 @@ const appRoutes: Routes = [
     SignupComponent,
     DashboardComponent,
     SidenavMenuComponent,
-    EventosComponent
+    EventosComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +69,8 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatCardModule,
     MatInputModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,34 @@
-<section class="inner-container">
-  <p>
-    Perfil Works!
-  </p>
+<section class="inner-container perfil-container">
+
+  <div class="default-grid">
+    <div class="col-4">
+      <mat-card class="user-image">
+        <figure>
+          <img src="/assets/images/avatar.jpg" alt="All Might">
+        </figure>
+      </mat-card>
+    </div>
+
+    <div class="col-8">
+      <mat-card class="user-data">
+
+        <div class="default-grid">
+          <div class="col-8">
+            <h4>All might</h4>
+            <mat-list role="list">
+              <mat-list-item role="listitem">Nome completo: <b>All Might</b></mat-list-item>
+              <mat-list-item role="listitem">Idade: <b>30 anos</b></mat-list-item>
+              <mat-list-item role="listitem">E-mail: <b>allmight@hero.com</b></mat-list-item>
+              <mat-list-item role="listitem">Tipo de esportista: <b>Corredor</b></mat-list-item>
+              <mat-list-item role="listitem">Usuário desde: <b>01/01/2018</b></mat-list-item>
+            </mat-list>
+          </div>
+          <div class="col-4">
+            <button mat-fab color="primary" (click)="openDialog()"><i class="material-icons">edit</i></button>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+
 </section>

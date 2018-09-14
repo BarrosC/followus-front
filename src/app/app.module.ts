@@ -9,6 +9,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -21,6 +23,7 @@ import { SidenavMenuComponent } from './base/sidenav-menu/sidenav-menu.component
 import { EventosComponent } from './components/eventos/eventos.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
+import { PerfilDialogComponent } from './components/perfil/perfil-dialog/perfil-dialog.component';
 
 const appRoutes: Routes = [
   {
@@ -43,6 +46,14 @@ const appRoutes: Routes = [
     path: 'eventos',
     component: EventosComponent
   },
+  {
+    path: 'noticias',
+    component: NoticiasComponent
+  },
+  {
+    path: 'perfil',
+    component: PerfilComponent
+  },
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 
@@ -58,6 +69,7 @@ const appRoutes: Routes = [
     SidenavMenuComponent,
     EventosComponent,
     PerfilComponent,
+    PerfilDialogComponent,
     NoticiasComponent
   ],
   imports: [
@@ -72,9 +84,14 @@ const appRoutes: Routes = [
     MatCardModule,
     MatInputModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    PerfilDialogComponent
+  ]
 })
 export class AppModule { }

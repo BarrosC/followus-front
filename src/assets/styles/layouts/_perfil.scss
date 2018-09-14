@@ -1,0 +1,49 @@
+.perfil-container {
+  // display: flex;
+
+  & > .default-grid {
+    width: 100%;
+    align-items: center;
+  }
+
+  .user-image {
+    padding: 3px;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .user-data {
+
+    .default-grid {
+      align-items: center;
+    }
+
+    h4 {
+      font-weight: bold;
+      font-size: 50px;
+      color: $default-orange;
+    }
+
+    button {
+      width: 150px;
+      height: 150px;
+      background-color: $default-orange;
+
+      i {
+        font-size: 60px;
+      }
+    }
+
+    .mat-list-item-content {
+      color: $default-dark-blue;
+
+      b {
+        margin-left: 10px;
+        color: $default-dark-gray;
+      }
+    }
+  }
+}

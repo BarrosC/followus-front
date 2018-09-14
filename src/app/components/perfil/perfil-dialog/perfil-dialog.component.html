@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>Editar perfil</h1>
+<div mat-dialog-content>
+  <div class="default-grid">
+    <div class="col-4">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Apelido" value="All Might">
+      </mat-form-field>
+    </div>
+    <div class="col-4">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nome Completo" value="All Might">
+      </mat-form-field>
+    </div>
+    <div class="col-4">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Idade" value="30">
+      </mat-form-field>
+    </div>
+    <div class="col-4">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="E-mail" value="allmight@hero.com">
+      </mat-form-field>
+    </div>
+    <div class="col-4">
+      <mat-form-field>
+        <mat-select placeholder="Tipo de esportista">
+          <mat-option [value]="Corredor">
+            Corredor
+          </mat-option>
+          <mat-option [value]="Caminhante">
+            Caminhante
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button color="warn">Cancelar</button>
+  <button mat-button color="primary">Salvar</button>
+</div>

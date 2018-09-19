@@ -1,0 +1,27 @@
+#outer-container.loading {
+  transition: all 300ms ease-in-out;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  .loader-container {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.loader-container {
+  transition: all 300ms ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($color: #000000, $alpha: .4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

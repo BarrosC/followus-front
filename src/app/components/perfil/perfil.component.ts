@@ -1,6 +1,6 @@
 import { PerfilDialogComponent } from './perfil-dialog/perfil-dialog.component';
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '../../../../node_modules/@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-perfil',

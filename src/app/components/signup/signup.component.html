@@ -12,12 +12,28 @@
 
     <form class="content-form">
       <mat-form-field>
-        <input matInput placeholder="E-mail">
+        <input type="text" id="nome" name="nome" matInput placeholder="Nome completo" [(ngModel)]="pessoa.nome">
       </mat-form-field>
       <mat-form-field>
-        <input type="password" matInput placeholder="Senha">
+        <input type="number" id="idade" name="idade" matInput placeholder="Idade" [(ngModel)]="pessoa.idade">
       </mat-form-field>
-      <button mat-raised-button class="action-button" color="primary" routerLink="/">Cadastrar</button>
+      <mat-form-field>
+        <mat-select id="tipoEsportista" name="tipoEsportista" placeholder="Tipo de esportista" [(ngModel)]="pessoa.tipoEsportista">
+          <mat-option value="Corredor">
+            Corredor
+          </mat-option>
+          <mat-option value="Caminhante">
+            Caminhante
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="email" id="email" name="email" matInput placeholder="E-mail" [(ngModel)]="user.email">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="password" id="password" name="password" matInput placeholder="Senha" [(ngModel)]="user.password">
+      </mat-form-field>
+      <button mat-raised-button class="action-button" color="primary" (click)="novoUsuario()">Cadastrar</button>
       <p class="signup-text">ou <a routerLink="/login">clique aqui</a> e acesse o site</p>
     </form>
 

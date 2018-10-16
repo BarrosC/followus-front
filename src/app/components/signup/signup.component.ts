@@ -1,6 +1,7 @@
+import { AuthService } from './../../base/util/auth.service';
 import { Router } from '@angular/router';
-import { PessoaVO } from './../../base/vo/pessoa';
-import { UsuarioVO } from './../../base/vo/usuario';
+import { PessoaVO } from '../../base/vo/pessoa';
+import { UsuarioVO } from '../../base/vo/usuario';
 import { SignupService } from './signup.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,9 +14,12 @@ export class SignupComponent implements OnInit {
   public user:UsuarioVO = new UsuarioVO();
   public pessoa:PessoaVO = new PessoaVO();
 
-  constructor(private signupService:SignupService, private router:Router) { }
+  constructor(private signupService:SignupService, private router:Router, private authService:AuthService) { }
 
   ngOnInit() {
+    if(this.authService.canActivate()) {
+      this.router.navigate(['/dashboard']);
+    }
   }
 
   novoUsuario() {

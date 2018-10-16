@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+import { AuthService } from './base/util/auth.service';
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -27,7 +29,7 @@ import { EventosComponent } from './components/eventos/eventos.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
 import { PerfilDialogComponent } from './components/perfil/perfil-dialog/perfil-dialog.component';
-import { HttpClientModule } from '../../node_modules/@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   {
@@ -44,19 +46,23 @@ const appRoutes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthService]
   },
   {
     path: 'eventos',
-    component: EventosComponent
+    component: EventosComponent,
+    canActivate: [AuthService]
   },
   {
     path: 'noticias',
-    component: NoticiasComponent
+    component: NoticiasComponent,
+    canActivate: [AuthService]
   },
   {
     path: 'perfil',
-    component: PerfilComponent
+    component: PerfilComponent,
+    canActivate: [AuthService]
   },
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
@@ -96,7 +102,9 @@ const appRoutes: Routes = [
     MatProgressSpinnerModule,
     MatSnackBarModule
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent],
   entryComponents: [
     PerfilDialogComponent

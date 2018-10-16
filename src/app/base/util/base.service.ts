@@ -2,11 +2,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import { MatSnackBar } from '../../../../node_modules/@angular/material/snack-bar';
+
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 export class BaseService{
 
-	private headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+	protected headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
 	
 	constructor(public http: HttpClient, public snackBar: MatSnackBar){}
 

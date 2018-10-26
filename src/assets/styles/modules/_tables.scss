@@ -1,0 +1,59 @@
+.default-table {
+  margin-top: 20px;
+  width: 100%;
+  transition: opacity 300ms ease-in-out;
+
+  &.disabled {
+    opacity: .3;
+  }
+
+  thead tr th {
+    border-radius: 0;
+    background-color: $default-blue;
+    color: white;
+  }
+
+  tbody tr {
+    transition: all 200ms ease-in-out;
+
+    &:hover {
+      background-color: #EEEEEE;
+    }
+  }
+
+  th, td {
+    padding: 8px 5px;
+    text-align: left;
+  }
+
+  .actions i {
+    vertical-align: middle;
+  }
+
+  .actions{
+    width: max-content;
+    max-width: max-content;
+  }
+
+  .actions a,
+  .actions i {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .actions a {
+    margin: 0 10px;
+    width: max-content;
+    max-width: max-content;
+  }
+
+  .truncate{
+    width: max-content;
+    max-width: 100%;
+
+    &.text-center {
+      margin: 0 auto;
+    }
+  }
+
+}

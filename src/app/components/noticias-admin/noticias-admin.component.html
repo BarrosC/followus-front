@@ -1,0 +1,33 @@
+<section class="inner-container noticias-admin-container">
+  <mat-card>
+    <div class="default-title-header">
+      <h3 class="default-title">Configurar Notícias</h3>
+      <button mat-raised-button color="primary" (click)="openDialog()">Nova Notícia</button>
+    </div>
+
+    <table class="default-table">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Subtítulo</th>
+          <th>Autor</th>
+          <th>Data de Criação</th>
+          <th class="actions text-center">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let noticia of noticias">
+          <td>{{noticia.titulo}}</td>
+          <td>{{noticia.subtitulo}}</td>
+          <td>{{noticia.autor}}</td>
+          <td>{{noticia.dtCriacao | date:"dd/MM/yyyy"}}</td>
+          <td class="actions text-center">
+            <a href="javascript:void(0)" matTooltip="Ver notícia" class="blue-text" ><i class="material-icons">remove_red_eye</i></a>
+            <a href="javascript:void(0)" matTooltip="Editar notícia" class="green-text" (click)="openDialogEdit(noticia)"><i class="material-icons">edit</i></a>
+            <a href="javascript:void(0)" matTooltip="Remover notícia" class="red-text" (click)="removerNoticiaDialog(noticia)"><i class="material-icons">cancel</i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card>
+</section>

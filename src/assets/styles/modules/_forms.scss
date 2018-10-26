@@ -17,7 +17,7 @@ mat-form-field {
     display: none;
   }
 
-  .user-data {
+  .input-data {
     align-self: flex-start;
     width: 100%;
     text-align: center;
@@ -29,6 +29,8 @@ mat-form-field {
       margin: 0 auto;
       border-radius: 50%;
       overflow: hidden;
+      display: flex;
+      align-items: center;
     }
 
     img {
@@ -68,4 +70,8 @@ mat-form-field {
       vertical-align: middle;
     }
   }
+}
+
+textarea {
+  min-height: 150px;
 }

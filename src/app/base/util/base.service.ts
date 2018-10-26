@@ -48,10 +48,10 @@ export class BaseService{
             	});
 	}
 
-	delete(url: string, body: any){
+	delete(url: string){
 		return this
 				.http
-				.delete(url, body)
+				.delete(url)
 				.map((response:any) => {
 					return response;
 				});

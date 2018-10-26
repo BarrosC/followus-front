@@ -35,5 +35,21 @@ b {
 }
 
 .text-center {
-  text-align: center;
+  text-align: center !important;
+}
+
+.right {
+  float: right;
+}
+
+.blue-text {
+  color: $default-blue;
+}
+
+.green-text {
+  color: $default-green;
+}
+
+.red-text {
+  color: $default-red;
 }

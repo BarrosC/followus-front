@@ -3,3 +3,32 @@ section.inner-container {
   padding: 30px;
   background-color: #EEEEEE;
 }
+
+.default-title-header {
+  display: flex;
+  align-items: center;
+
+  button {
+    margin-left: auto;
+  }
+}
+
+.default-title {
+  color: $default-orange;
+  font-size: 26px;
+  font-weight: bold;
+  padding-left: 60px;
+  position: relative;
+
+  &:before {
+    content: "";
+    height: 4px;
+    width: 50px;
+    background-color: $default-blue;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -2px;
+    display: block;
+  }
+}

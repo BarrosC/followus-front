@@ -16,6 +16,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -30,6 +31,10 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
 import { PerfilDialogComponent } from './components/perfil/perfil-dialog/perfil-dialog.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NoticiasAdminComponent } from './components/noticias-admin/noticias-admin.component';
+import { NoticiasAdminDialogComponent } from './components/noticias-admin/noticias-admin-dialog/noticias-admin-dialog.component';
+import { NoticiasAdminRemoverDialogComponent } from './components/noticias-admin/noticias-admin-remover-dialog/noticias-admin-remover-dialog.component';
+import { NoticiasDetalheDialogComponent } from './components/noticias/noticias-detalhe-dialog/noticias-detalhe-dialog.component';
 
 const appRoutes: Routes = [
   {
@@ -60,6 +65,11 @@ const appRoutes: Routes = [
     canActivate: [AuthService]
   },
   {
+    path: 'noticiasadmin',
+    component: NoticiasAdminComponent,
+    canActivate: [AuthService]
+  },
+  {
     path: 'perfil',
     component: PerfilComponent,
     canActivate: [AuthService]
@@ -80,7 +90,11 @@ const appRoutes: Routes = [
     EventosComponent,
     PerfilComponent,
     PerfilDialogComponent,
-    NoticiasComponent
+    NoticiasComponent,
+    NoticiasAdminComponent,
+    NoticiasAdminDialogComponent,
+    NoticiasAdminRemoverDialogComponent,
+    NoticiasDetalheDialogComponent
   ],
   imports: [
     FormsModule,
@@ -100,14 +114,17 @@ const appRoutes: Routes = [
     MatDialogModule,
     MatSelectModule,
     MatProgressSpinnerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTooltipModule
   ],
   providers: [
     AuthService
   ],
   bootstrap: [AppComponent],
   entryComponents: [
-    PerfilDialogComponent
+    PerfilDialogComponent,
+    NoticiasAdminDialogComponent,
+    NoticiasAdminRemoverDialogComponent
   ]
 })
 export class AppModule { }

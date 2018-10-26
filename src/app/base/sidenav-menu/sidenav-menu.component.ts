@@ -1,3 +1,5 @@
+import { PessoaVO } from './../vo/pessoa';
+import { SidenavMenuService } from './sidenav-menu.service';
 import { AuthService } from './../util/auth.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavMenuComponent implements OnInit {
 
-  constructor(private authService:AuthService) { }
+  public pessoa:PessoaVO = new PessoaVO();
+
+  constructor(private authService:AuthService, private sidenavMenuService: SidenavMenuService) { }
 
   ngOnInit() {
+    if(localStorage.getItem("currentUser")) {
+      this.recuperarPessoa();
+    }
+  }
+
+  recuperarPessoa() {
+    this.sidenavMenuService.recuperarPessoa().subscribe(response => {
+      this.pessoa = response;
+      console.log(response);
+      
+    },
+    error => {
+      this.sidenavMenuService.hideLoader();
+      this.sidenavMenuService.showError("Erro ao recuperar usuário");
+    });
   }
 
   sair() {

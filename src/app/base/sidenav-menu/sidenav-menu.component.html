@@ -2,11 +2,12 @@
 
   <figure class="user-data">
     <span>
-      <img src="/assets/images/avatar.jpg" alt="All Might">
+      <img *ngIf="pessoa.foto" src="{{pessoa.foto}}" alt="{{pessoa.nome}}">
+      <img *ngIf="!pessoa.foto" src="/assets/images/avatar.png" alt="">
     </span>
     
     <figcaption>
-      Bem vindo <b>All Might</b>!
+      Bem vindo <b>{{pessoa.nome}}</b>!
     </figcaption>
   </figure>
 

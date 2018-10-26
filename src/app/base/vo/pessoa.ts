@@ -5,6 +5,7 @@ export class PessoaVO{
         public idade?:number,
         public tipoEsportista?:string,
         public userId?:string,
-        public dtCriacao?:Date
+        public dtCriacao?:Date,
+        public foto?:string
     ){}
 }

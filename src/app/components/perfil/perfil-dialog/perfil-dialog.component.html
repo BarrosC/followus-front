@@ -33,6 +33,10 @@
         </mat-select>
       </mat-form-field>
     </div>
+
+    <div class="col-4">
+      <input type="file" name="foto" id="foto" (change)="handleFileSelect($event)">
+    </div>
   </div>
 </div>
 <div mat-dialog-actions>

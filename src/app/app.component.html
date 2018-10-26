@@ -8,8 +8,8 @@
   
   <!-- Main Content -->
   <main class="main-container" [ngClass]="{'home-container':checkHomeLocation()}">
-    <mat-sidenav-container class="example-container">
-      <mat-sidenav mode="side" [opened]="checkNoMenuLocations()">
+    <mat-sidenav-container>
+      <mat-sidenav mode="side" [opened]="true" *ngIf="checkNoMenuLocations()">
         <app-sidenav-menu></app-sidenav-menu>
       </mat-sidenav>
   

@@ -27,7 +27,7 @@ export class AuthService extends BaseService implements CanActivate {
   }
 
   logout() {
-    localStorage.removeItem('currentUser');
+    localStorage.clear();
     this.headers.delete('ACCESS_TOKEN');
     this.router.navigate(['/login']);
   }

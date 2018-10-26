@@ -1,3 +1,4 @@
+import { NoticiasDetalheDialogComponent } from './../noticias/noticias-detalhe-dialog/noticias-detalhe-dialog.component';
 import { NoticiasAdminRemoverDialogComponent } from './noticias-admin-remover-dialog/noticias-admin-remover-dialog.component';
 import { NoticiasAdminService } from './noticias-admin.service';
 import { NoticiaVO } from './../../base/vo/noticia';
@@ -43,9 +44,16 @@ export class NoticiasAdminComponent implements OnInit {
     });
   }
 
-  removerNoticiaDialog(noticiaId: String) {
+  detalheNoticiaDialog(noticia: String) {
+    this.dialog.open(NoticiasDetalheDialogComponent, {
+      data: noticia,
+      disableClose: true
+    });
+  }
+
+  removerNoticiaDialog(noticia: NoticiaVO) {
     this.dialog.open(NoticiasAdminRemoverDialogComponent, {
-      data: noticiaId,
+      data: noticia,
       disableClose: true
     });
   }

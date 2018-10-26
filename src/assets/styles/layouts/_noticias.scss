@@ -1,0 +1,46 @@
+.detalhe-noticia-content {
+  margin: 15px 0;
+
+  .noticia-data {
+    align-self: flex-start;
+    width: 100%;
+    text-align: center;
+
+    > span {
+      width: 200px;
+      height: 200px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center
+    }
+
+    img {
+      width: 100%;
+      display: inline-block;
+    }
+
+    figcaption {
+      margin-top: 15px;
+
+      b {
+        font-size: 16px;
+        color: $default-orange;
+        display: block;
+      }
+
+      span {
+        color: $default-blue;
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  .noticia-text {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+}

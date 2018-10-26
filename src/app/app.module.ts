@@ -123,6 +123,7 @@ const appRoutes: Routes = [
   bootstrap: [AppComponent],
   entryComponents: [
     PerfilDialogComponent,
+    NoticiasDetalheDialogComponent,
     NoticiasAdminDialogComponent,
     NoticiasAdminRemoverDialogComponent
   ]

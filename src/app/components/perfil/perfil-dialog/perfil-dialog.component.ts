@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { PerfilService } from './../perfil.service';
+import { PessoaVO } from './../../../base/vo/pessoa';
+import { Component, OnInit, Inject } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-perfil-dialog',
@@ -7,11 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilDialogComponent implements OnInit {
 
-  public foto:any;
+  private pessoa: PessoaVO;
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<PerfilDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: PessoaVO, public perfilService: PerfilService) { }
 
   ngOnInit() {
+    this.pessoa = this.data;
   }
 
   handleFileSelect(evt){
@@ -28,9 +32,24 @@ export class PerfilDialogComponent implements OnInit {
   }
 
   _handleReaderLoaded(readerEvt) {
+    const base64Header = "data:image/jpeg;base64,";
     var binaryString = readerEvt.target.result;
-    this.foto= btoa(binaryString);
-    console.log(btoa(binaryString));
+    this.pessoa.foto= base64Header + btoa(binaryString);
+  }
+
+  atualizarPessoa() {
+    this.perfilService.showLoader();
+
+    this.perfilService.atualizarPessoa(this.pessoa).subscribe(response => {
+      this.perfilService.hideLoader();
+      this.perfilService.showSuccess("Usuário atualizado com sucesso");
+      this.dialogRef.close();
+      location.reload();
+    },
+    error => {
+      this.perfilService.hideLoader();
+      this.perfilService.showError("Erro ao atualizar usuário");
+    });
   }
 
 }

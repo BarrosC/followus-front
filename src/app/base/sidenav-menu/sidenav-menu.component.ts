@@ -21,10 +21,11 @@ export class SidenavMenuComponent implements OnInit {
   }
 
   recuperarPessoa() {
+    this.sidenavMenuService.showLoader();
+
     this.sidenavMenuService.recuperarPessoa().subscribe(response => {
+      this.sidenavMenuService.hideLoader();
       this.pessoa = response;
-      console.log(response);
-      
     },
     error => {
       this.sidenavMenuService.hideLoader();

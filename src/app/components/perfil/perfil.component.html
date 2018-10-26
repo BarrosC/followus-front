@@ -4,7 +4,8 @@
     <div class="col-4">
       <mat-card class="user-image">
         <figure>
-          <img src="/assets/images/avatar.jpg" alt="All Might">
+          <img *ngIf="pessoa.foto" src="{{pessoa.foto}}" alt="{{pessoa.nome}}">
+          <img *ngIf="!pessoa.foto" src="/assets/images/avatar.png" alt="">
         </figure>
       </mat-card>
     </div>
@@ -14,13 +15,13 @@
 
         <div class="default-grid">
           <div class="col-8">
-            <h4>All might</h4>
+            <h4>{{pessoa.nome}}</h4>
             <mat-list role="list">
-              <mat-list-item role="listitem">Nome completo: <b>All Might</b></mat-list-item>
-              <mat-list-item role="listitem">Idade: <b>30 anos</b></mat-list-item>
-              <mat-list-item role="listitem">E-mail: <b>allmight@hero.com</b></mat-list-item>
-              <mat-list-item role="listitem">Tipo de esportista: <b>Corredor</b></mat-list-item>
-              <mat-list-item role="listitem">Usuário desde: <b>01/01/2018</b></mat-list-item>
+              <mat-list-item role="listitem">Nome completo: <b>{{pessoa.nome}}</b></mat-list-item>
+              <mat-list-item role="listitem">Idade: <b>{{pessoa.idade}} anos</b></mat-list-item>
+              <!-- <mat-list-item role="listitem">E-mail: <b>allmight@hero.com</b></mat-list-item> -->
+              <mat-list-item role="listitem">Tipo de esportista: <b>{{pessoa.tipoEsportista}}</b></mat-list-item>
+              <!-- <mat-list-item role="listitem">Usuário desde: <b>01/01/2018</b></mat-list-item> -->
             </mat-list>
           </div>
           <div class="col-4">

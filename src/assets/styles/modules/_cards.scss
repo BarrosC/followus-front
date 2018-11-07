@@ -91,8 +91,19 @@
       }
     }
   }
+}
 
-  .card-list {
-    
+.mat-card-title {
+  color: $default-orange;
+  font-size: 16px !important;
+  font-weight: bold;
+}
+
+.mat-card-image {
+  height: 200px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
   }
 }

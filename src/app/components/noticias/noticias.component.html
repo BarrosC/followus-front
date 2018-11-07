@@ -1,5 +1,32 @@
 <section class="inner-container">
-  <p>
-    Noticias Works!
-  </p>
+  <mat-card>
+    <h3 class="default-title">Notícias</h3>
+  </mat-card>
+
+  <div class="noticias-list">
+
+    <div class="default-grid">
+      <div class="col-3" *ngFor="let noticia of noticias">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>{{noticia.titulo}}</mat-card-title>
+              <mat-card-subtitle>{{noticia.subtitulo}}</mat-card-subtitle>
+            </mat-card-header>
+            <div mat-card-image>
+              <img *ngIf="noticia.imagem" src="{{noticia.imagem}}" alt="{{noticia.titulo}}">
+              <img *ngIf="!noticia.imagem" src="/assets/images/noticia-default.jpg" alt="">
+            </div>
+            <mat-card-content>
+              <p class="multiline-truncate">
+                {{noticia.texto}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions class="text-center">
+              <button mat-button mat-raised-button color="primary" (click)="detalheNoticiaDialog(noticia)"><i class="material-icons">remove_red_eye</i> Ver mais</button>
+            </mat-card-actions>
+          </mat-card>
+      </div>
+    </div>
+    
+  </div>
 </section>

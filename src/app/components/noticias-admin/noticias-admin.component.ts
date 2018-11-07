@@ -18,23 +18,25 @@ export class NoticiasAdminComponent implements OnInit {
   constructor(private dialog: MatDialog, private noticiasAdminService: NoticiasAdminService) { }
 
   ngOnInit() {
-    this.recuperarNoticia();
+    this.recuperarNoticias();
   }
 
-  openDialog() {
-    this.dialog.open(NoticiasAdminDialogComponent, {
-      disableClose: true
-    });
-  }
+  openDialog(noticia) {
+    if(!noticia) {
+      noticia = null;
+    }
 
-  openDialogEdit(noticia) {
-    this.dialog.open(NoticiasAdminDialogComponent, {
+    const dialogRef = this.dialog.open(NoticiasAdminDialogComponent, {
       data: noticia,
       disableClose: true
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.recuperarNoticias();
+    });
   }
 
-  recuperarNoticia() {
+  recuperarNoticias() {
     this.noticiasAdminService.recuperarNoticias().subscribe(response => {
       this.noticias = response;
     },
@@ -52,9 +54,13 @@ export class NoticiasAdminComponent implements OnInit {
   }
 
   removerNoticiaDialog(noticia: NoticiaVO) {
-    this.dialog.open(NoticiasAdminRemoverDialogComponent, {
+    const dialogRef = this.dialog.open(NoticiasAdminRemoverDialogComponent, {
       data: noticia,
       disableClose: true
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.recuperarNoticias();
     });
   }
 

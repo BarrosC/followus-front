@@ -22,7 +22,6 @@ export class NoticiasAdminRemoverDialogComponent implements OnInit {
     this.noticiasAdminService.removerNoticia(this.noticia.id).subscribe(response => {
       this.noticiasAdminService.showSuccess("Notícia removida com sucesso!");
       this.dialogRef.close();
-      location.reload();
     },
     error => {
       this.noticiasAdminService.hideLoader();

@@ -11,10 +11,4 @@ export class SidenavMenuService extends BaseService {
 
   constructor(public http: HttpClient, public snackBar: MatSnackBar) { super(http, snackBar); }
 
-  recuperarPessoa() {
-    const curUserId = JSON.parse(localStorage.getItem('currentUser')).userId;
-    const query = JSON.stringify({"where": {"userId": {"like":curUserId}}});
-    return this.get(environment.baseUrl + '/Pessoas/findOne?filter=' + query);
-  }
-
 }

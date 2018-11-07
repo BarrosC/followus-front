@@ -1,6 +1,6 @@
 export class PessoaVO{
     constructor(
-        public id?:number,
+        public id?:string,
         public nome?:string,
         public idade?:number,
         public tipoEsportista?:string,

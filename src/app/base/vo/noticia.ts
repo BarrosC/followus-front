@@ -1,6 +1,6 @@
 export class NoticiaVO{
     constructor(
-        public id?:number,
+        public id?:string,
         public titulo?:string,
         public sutitulo?:string,
         public texto?:string,

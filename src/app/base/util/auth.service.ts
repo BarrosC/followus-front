@@ -17,12 +17,27 @@ export class AuthService extends BaseService implements CanActivate {
     this.post(environment.baseUrl + "/Users/login", user).subscribe(response => {
       localStorage.setItem('currentUser', JSON.stringify(response));
       this.headers.append('ACCESS_TOKEN', response.id);
-      this.hideLoader();
-      this.router.navigate(['/dashboard']);
+      this.getPerson();
     },
     error => {
       this.hideLoader();
       this.showError("Email ou senha inválidos");
+    });
+  }
+
+  getPerson() {
+    const curUserId = JSON.parse(localStorage.getItem('currentUser')).userId;
+    const query = JSON.stringify({"where": {"userId": {"like":curUserId}}});
+
+    this.get(environment.baseUrl + '/Pessoas/findOne?filter=' + query).subscribe(response => {
+      this.hideLoader();
+      localStorage.setItem('currentPerson', JSON.stringify(response));
+      this.router.navigate(['/dashboard']);
+    },
+    error => {
+      this.hideLoader();
+      this.showError("Erro ao recuperar usuário");
+      this.logout();
     });
   }
 

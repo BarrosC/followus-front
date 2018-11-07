@@ -21,16 +21,7 @@ export class SidenavMenuComponent implements OnInit {
   }
 
   recuperarPessoa() {
-    this.sidenavMenuService.showLoader();
-
-    this.sidenavMenuService.recuperarPessoa().subscribe(response => {
-      this.sidenavMenuService.hideLoader();
-      this.pessoa = response;
-    },
-    error => {
-      this.sidenavMenuService.hideLoader();
-      this.sidenavMenuService.showError("Erro ao recuperar usuário");
-    });
+    this.pessoa = JSON.parse(localStorage.getItem('currentPerson'));
   }
 
   sair() {

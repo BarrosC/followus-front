@@ -35,6 +35,7 @@ import { NoticiasAdminComponent } from './components/noticias-admin/noticias-adm
 import { NoticiasAdminDialogComponent } from './components/noticias-admin/noticias-admin-dialog/noticias-admin-dialog.component';
 import { NoticiasAdminRemoverDialogComponent } from './components/noticias-admin/noticias-admin-remover-dialog/noticias-admin-remover-dialog.component';
 import { NoticiasDetalheDialogComponent } from './components/noticias/noticias-detalhe-dialog/noticias-detalhe-dialog.component';
+import { EventosNovoDialogComponent } from './components/eventos/eventos-novo-dialog/eventos-novo-dialog.component';
 
 const appRoutes: Routes = [
   {
@@ -94,7 +95,8 @@ const appRoutes: Routes = [
     NoticiasAdminComponent,
     NoticiasAdminDialogComponent,
     NoticiasAdminRemoverDialogComponent,
-    NoticiasDetalheDialogComponent
+    NoticiasDetalheDialogComponent,
+    EventosNovoDialogComponent
   ],
   imports: [
     FormsModule,
@@ -125,7 +127,8 @@ const appRoutes: Routes = [
     PerfilDialogComponent,
     NoticiasDetalheDialogComponent,
     NoticiasAdminDialogComponent,
-    NoticiasAdminRemoverDialogComponent
+    NoticiasAdminRemoverDialogComponent,
+    EventosNovoDialogComponent
   ]
 })
 export class AppModule { }

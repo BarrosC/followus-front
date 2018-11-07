@@ -1,3 +1,5 @@
+import { EventosNovoDialogComponent } from './eventos-novo-dialog/eventos-novo-dialog.component';
+import { MatDialog } from '@angular/material';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
+  }
+
+  openDialog(noticia) {
+    if(!noticia) {
+      noticia = null;
+    }
+
+    const dialogRef = this.dialog.open(EventosNovoDialogComponent, {
+      disableClose: true
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      // this.recuperarNoticias();
+    });
   }
 
 }

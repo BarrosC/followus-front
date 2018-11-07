@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>{{evento.titulo}}</h1>
+<div mat-dialog-content>
+  <div class="detalhe-evento-content">
+    <figure class="evento-data">
+      <span>
+        <img *ngIf="evento.imagem" src="{{evento.imagem}}" alt="{{evento.titulo}}">
+        <img *ngIf="!evento.imagem" src="/assets/images/noticia-default.jpg" alt="">
+      </span>
+
+      <figcaption>
+        <b>{{evento.tipoEvento}} {{evento.distancia}}km {{evento.dataEvento | date:"dd/MM/yyyy"}} - {{evento.horaEvento}}h</b>
+        <span>{{evento.criador.nome}} | Criado em: {{evento.dataCriacao | date:"dd/MM/yyyy"}}</span>
+      </figcaption>
+    </figure>
+
+    <p class="noticia-text">{{evento.descricao}}</p>
+
+    <table class="default-table">
+      <thead>
+        <tr>
+          <th>Participante</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let participante of evento.participantes">
+          <td>{{participante.nome}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div mat-dialog-actions>
+  <div class="text-center" style="width: 100%;">
+    <button mat-button color="primary" (click)="dialogRef.close()">Fechar</button>
+  </div>
+</div>

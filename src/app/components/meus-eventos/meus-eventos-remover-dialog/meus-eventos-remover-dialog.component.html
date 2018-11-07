@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Remover evento</h1>
+<div mat-dialog-content>
+  <p style="margin: 15px 0;">Gostaria de remover o evento "{{evento.titulo}}"?</p>  
+</div>
+
+<div mat-dialog-actions>
+  <div class="text-center" style="width: 100%;">
+    <button mat-button color="warn" (click)="dialogRef.close()">Cancelar</button>
+    <button mat-button color="primary" (click)="removerEvento()">Remover</button>
+  </div>
+</div>

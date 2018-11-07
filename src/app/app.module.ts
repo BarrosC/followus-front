@@ -38,6 +38,10 @@ import { NoticiasAdminDialogComponent } from './components/noticias-admin/notici
 import { NoticiasAdminRemoverDialogComponent } from './components/noticias-admin/noticias-admin-remover-dialog/noticias-admin-remover-dialog.component';
 import { NoticiasDetalheDialogComponent } from './components/noticias/noticias-detalhe-dialog/noticias-detalhe-dialog.component';
 import { EventosNovoDialogComponent } from './components/eventos/eventos-novo-dialog/eventos-novo-dialog.component';
+import { MeusEventosComponent } from './components/meus-eventos/meus-eventos.component';
+import { EventosDetalheDialogComponent } from './components/eventos/eventos-detalhe-dialog/eventos-detalhe-dialog.component';
+import { MeusEventosDialogComponent } from './components/meus-eventos/meus-eventos-dialog/meus-eventos-dialog.component';
+import { MeusEventosRemoverDialogComponent } from './components/meus-eventos/meus-eventos-remover-dialog/meus-eventos-remover-dialog.component';
 
 const appRoutes: Routes = [
   {
@@ -60,6 +64,11 @@ const appRoutes: Routes = [
   {
     path: 'eventos',
     component: EventosComponent,
+    canActivate: [AuthService]
+  },
+  {
+    path: 'meus-eventos',
+    component: MeusEventosComponent,
     canActivate: [AuthService]
   },
   {
@@ -98,7 +107,11 @@ const appRoutes: Routes = [
     NoticiasAdminDialogComponent,
     NoticiasAdminRemoverDialogComponent,
     NoticiasDetalheDialogComponent,
-    EventosNovoDialogComponent
+    EventosNovoDialogComponent,
+    MeusEventosComponent,
+    EventosDetalheDialogComponent,
+    MeusEventosDialogComponent,
+    MeusEventosRemoverDialogComponent
   ],
   imports: [
     FormsModule,
@@ -133,7 +146,10 @@ const appRoutes: Routes = [
     NoticiasDetalheDialogComponent,
     NoticiasAdminDialogComponent,
     NoticiasAdminRemoverDialogComponent,
-    EventosNovoDialogComponent
+    EventosNovoDialogComponent,
+    EventosDetalheDialogComponent,
+    MeusEventosDialogComponent,
+    MeusEventosRemoverDialogComponent
   ]
 })
 export class AppModule { }

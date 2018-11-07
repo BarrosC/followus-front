@@ -1,0 +1,37 @@
+<section class="inner-container">
+  <mat-card>
+    <div class="default-title-header">
+      <h3 class="default-title">Meus Eventos</h3>
+      <button mat-raised-button color="primary" (click)="openDialog()">Novo Evento</button>
+    </div>
+
+    <table class="default-table">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Tipo de Evento</th>
+          <th>Distância</th>
+          <th>Criador</th>
+          <th>Data de Criação</th>
+          <th>Data do Evento</th>
+          <th class="actions text-center">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let evento of eventos">
+          <td>{{evento.titulo}}</td>
+          <td>{{evento.tipoEvento}}</td>
+          <td>{{evento.distancia}}Km</td>
+          <td>{{evento.criador.nome}}</td>
+          <td>{{evento.dataCriacao | date:"dd/MM/yyyy"}}</td>
+          <td>{{evento.dataEvento | date:"dd/MM/yyyy"}} - {{evento.horaEvento}}h</td>
+          <td class="actions text-center">
+            <a href="javascript:void(0)" matTooltip="Ver Evento" class="blue-text" (click)="detalheEventoDialog(evento)"><i class="material-icons">remove_red_eye</i></a>
+            <a href="javascript:void(0)" matTooltip="Editar evento" class="green-text" (click)="openDialog(evento)"><i class="material-icons">edit</i></a>
+            <a href="javascript:void(0)" matTooltip="Remover evento" class="red-text" (click)="removerEventoDialog(evento)"><i class="material-icons">cancel</i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card>
+</section>

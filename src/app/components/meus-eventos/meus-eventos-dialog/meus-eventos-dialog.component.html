@@ -1,0 +1,68 @@
+<h1 mat-dialog-title>Novo evento</h1>
+<div mat-dialog-content>
+  <div class="default-grid">
+    <div class="col-4">
+      <mat-form-field>
+        <input matInput placeholder="Título" id="titulo" name="titulo" [(ngModel)]="evento.titulo">
+      </mat-form-field>
+    </div>
+    <div class="col-4">
+      <mat-form-field>
+        <input matInput placeholder="Endereço" id="endereco" name="endereco" [(ngModel)]="evento.endereco">
+      </mat-form-field>
+    </div>
+    <div class="col-4">
+      <mat-form-field>
+        <input matInput placeholder="Data do evento" id="dataEvento" name="dataEvento" [(ngModel)]="evento.dataEvento" [matDatepicker]="eventoDatePicker">
+        <mat-datepicker-toggle matSuffix [for]="eventoDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #eventoDatePicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-4">
+      <mat-form-field>
+        <input matInput type="number" placeholder="Hora do evento" id="horaEvento" name="horaEvento" [(ngModel)]="evento.horaEvento">
+      </mat-form-field>
+    </div>
+    <div class="col-4">
+      <mat-form-field>
+        <input matInput type="number" placeholder="Distância(km)" id="distancia" name="distancia" [(ngModel)]="evento.distancia">
+      </mat-form-field>
+    </div>
+    <div class="col-4">
+      <mat-form-field>
+        <mat-select placeholder="Tipo de evento" id="tipoEvento" name="tipoEvento" [(ngModel)]="evento.tipoEvento">
+          <mat-option value="Corrida">
+            Corrida
+          </mat-option>
+          <mat-option value="Caminhada">
+            Caminhada
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <mat-form-field>
+        <textarea matInput placeholder="Descrição" id="descricao" name="descricao" [(ngModel)]="evento.descricao"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="image-input">
+    <figure class="input-data">
+      <span>
+        <img *ngIf="evento.imagem" src="{{evento.imagem}}" alt="{{evento.titulo}}">
+        <img *ngIf="!evento.imagem" src="/assets/images/noticia-default.jpg" alt="">
+      </span>
+    </figure>
+  
+    <label for="foto"><i class="material-icons">cloud_upload</i> Escolher imagem</label>
+    <input type="file" name="foto" id="foto" (change)="handleFileSelect($event)">
+  </div>
+</div>
+
+<div mat-dialog-actions>
+  <div class="text-center" style="width: 100%;">
+    <button mat-button color="warn" (click)="dialogRef.close()">Cancelar</button>
+    <button mat-button color="primary" (click)="salvarEvento()">Salvar</button>
+  </div>
+</div>

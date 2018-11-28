@@ -2,29 +2,14 @@
 
   <div class="default-grid">
 
-    <div class="col-3">
+    <div class="col-6">
       <div class="default-card z-depth-1">
         <div class="card-icon icon-orange z-depth-2">
           <i class="material-icons">event_note</i>
         </div>
         <div class="card-info">
           <p class="info-text">Eventos concluídos</p>
-          <p class="info-data">15/20</p>
-        </div>
-        <div class="card-footer">
-          <span>
-            <i class="material-icons">calendar_today</i> últimos 30 dias</span>
-        </div>
-      </div>
-    </div>
-    <div class="col-3">
-      <div class="default-card z-depth-1">
-        <div class="card-icon icon-green z-depth-2">
-          <i class="material-icons">directions_walk</i>
-        </div>
-        <div class="card-info">
-          <p class="info-text">Distância percorrida</p>
-          <p class="info-data">40km</p>
+          <p class="info-data">{{meusEventosConcluidos()}}/{{meusEventos.length}}</p>
         </div>
         <div class="card-footer">
           <span>
@@ -33,6 +18,21 @@
       </div>
     </div>
     <div class="col-6">
+      <div class="default-card z-depth-1">
+        <div class="card-icon icon-green z-depth-2">
+          <i class="material-icons">directions_walk</i>
+        </div>
+        <div class="card-info">
+          <p class="info-text">Distância percorrida</p>
+          <p class="info-data">{{distanciaTotalPercorrida()}}km</p>
+        </div>
+        <div class="card-footer">
+          <span>
+            <i class="material-icons">calendar_today</i> desde o início</span>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-6">
       <div class="default-card z-depth-1">
         <div class="card-icon icon-red z-depth-2">
           <i class="material-icons">event</i>
@@ -46,80 +46,56 @@
             <i class="material-icons">remove_red_eye</i> Ver evento</a>
         </div>
       </div>
-    </div>
+    </div> -->
 
   </div>
 
   <div class="default-grid other-info">
 
     <div class="col-6">
-      <div class="default-card z-depth-1">
+      <div class="default-card z-depth-1" style="min-height: 280px;">
         <div class="card-icon icon-blue full z-depth-2">
           Últimos eventos
         </div>
         <div class="card-info">
           <mat-list role="list" class="card-list">
-            <mat-list-item role="listitem">
-              <a href="#" class="card-link">
-                <span>
-                  <b>Corrida no kartódromo</b> - São Carlos/SP</span>
-                <span>
-                  <i class="material-icons align-center">directions_run</i> 10km</span>
-              </a>
-            </mat-list-item>
-            <mat-list-item role="listitem">
-              <a href="#" class="card-link">
-                <span>
-                  <b>Corrida no kartódromo</b> - São Carlos/SP</span>
-                <span>
-                  <i class="material-icons align-center">directions_run</i> 10km</span>
-              </a>
-            </mat-list-item>
-            <mat-list-item role="listitem">
-              <a href="#" class="card-link">
-                <span>
-                  <b>Corrida no kartódromo</b> - São Carlos/SP</span>
-                <span>
-                  <i class="material-icons align-center">directions_run</i> 10km</span>
-              </a>
-            </mat-list-item>
+            <ng-container *ngFor="let evento of eventos; let i = index">
+              <mat-list-item role="listitem" *ngIf="i<3 && validateDate(evento)">
+                <a class="card-link" (click)="detalheEventoDialog(evento)">
+                  <span>
+                    <b>{{evento.titulo}}</b> - {{evento.tipoEvento}}</span>
+                  <span>
+                    <i class="material-icons align-center">directions_run</i> {{evento.distancia}}km</span>
+                </a>
+              </mat-list-item>
+            </ng-container>
           </mat-list>
         </div>
-        <div class="card-footer">
-          <a href="#">
+        <div class="card-footer" style="align-self: flex-end;">
+          <a routerLink="/eventos">
             <i class="material-icons">remove_red_eye</i> Ver todos os eventos</a>
         </div>
       </div>
     </div>
     <div class="col-6">
-      <div class="default-card z-depth-1">
+      <div class="default-card z-depth-1" style="min-height: 280px;">
         <div class="card-icon icon-red full z-depth-2">
           Últimas notícias
         </div>
         <div class="card-info">
           <mat-list role="list" class="card-list">
-            <mat-list-item role="listitem">
-              <a href="#" class="card-link">
-                <b>Lorem ipsum dolor sit amet consectetur adipisicing elit.</b>
-                <i class="material-icons">remove_red_eye</i>
-              </a>
-            </mat-list-item>
-            <mat-list-item role="listitem">
-              <a href="#" class="card-link">
-                <b>Lorem ipsum dolor sit amet consectetur adipisicing elit.</b>
-                <i class="material-icons">remove_red_eye</i>
-              </a>
-            </mat-list-item>
-            <mat-list-item role="listitem">
-              <a href="#" class="card-link">
-                <b>Lorem ipsum dolor sit amet consectetur adipisicing elit.</b>
-                <i class="material-icons">remove_red_eye</i>
-              </a>
-            </mat-list-item>
+            <ng-container *ngFor="let noticia of noticias; let i = index;">
+              <mat-list-item role="listitem" *ngIf="i<3">
+                <a class="card-link" (click)="detalheNoticiaDialog(noticia)">
+                  <p class="truncate text-left"><b>{{noticia.titulo}}</b> - {{noticia.subtitulo}}</p>
+                  <i class="material-icons">remove_red_eye</i>
+                </a>
+              </mat-list-item>
+            </ng-container>
           </mat-list>
         </div>
-        <div class="card-footer">
-          <a href="#">
+        <div class="card-footer" style="align-self: flex-end;">
+          <a routerLink="/noticias">
             <i class="material-icons">remove_red_eye</i> Ver todas as notícias</a>
         </div>
       </div>

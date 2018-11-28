@@ -1,3 +1,4 @@
+import { PessoaVO } from './../vo/pessoa';
 import { environment } from './../../../environments/environment';
 import { BaseService } from './base.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -8,7 +9,7 @@ import { Router, CanActivate } from '@angular/router';
 @Injectable()
 export class AuthService extends BaseService implements CanActivate {
 
-  constructor(public http: HttpClient, public snackBar: MatSnackBar, private router:Router) { super(http, snackBar); }
+  constructor(public http: HttpClient, public snackBar: MatSnackBar, private router: Router) { super(http, snackBar); }
 
   login(user) {
 
@@ -41,6 +42,11 @@ export class AuthService extends BaseService implements CanActivate {
     });
   }
 
+  getLoggedPerson() {
+    const pessoa: PessoaVO = JSON.parse(localStorage.getItem('currentPerson'));
+    return pessoa;
+  }
+
   logout() {
     localStorage.clear();
     this.headers.delete('ACCESS_TOKEN');
@@ -62,7 +68,11 @@ export class AuthService extends BaseService implements CanActivate {
 
       return true;
     } else {
-      this.router.navigate(['/login']);
+      
+      if (this.router.url !== '/signup') {
+        this.router.navigate(['/login']);
+      }
+      
       return false;
     }
     

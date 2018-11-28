@@ -24,8 +24,6 @@ export class MeusEventosComponent implements OnInit {
   recuperarEventos() {
     this.meusEventosService.recuperarEventos().subscribe(response => {
       this.eventos = response;
-      console.log(this.eventos);
-      
     },
     error => {
       this.meusEventosService.hideLoader();

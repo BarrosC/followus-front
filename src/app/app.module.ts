@@ -42,6 +42,8 @@ import { MeusEventosComponent } from './components/meus-eventos/meus-eventos.com
 import { EventosDetalheDialogComponent } from './components/eventos/eventos-detalhe-dialog/eventos-detalhe-dialog.component';
 import { MeusEventosDialogComponent } from './components/meus-eventos/meus-eventos-dialog/meus-eventos-dialog.component';
 import { MeusEventosRemoverDialogComponent } from './components/meus-eventos/meus-eventos-remover-dialog/meus-eventos-remover-dialog.component';
+import { EventosParticiparDialogComponent } from './components/eventos/eventos-participar-dialog/eventos-participar-dialog.component';
+import { EventosSairDialogComponent } from './components/eventos/eventos-sair-dialog/eventos-sair-dialog.component';
 
 const appRoutes: Routes = [
   {
@@ -111,7 +113,9 @@ const appRoutes: Routes = [
     MeusEventosComponent,
     EventosDetalheDialogComponent,
     MeusEventosDialogComponent,
-    MeusEventosRemoverDialogComponent
+    MeusEventosRemoverDialogComponent,
+    EventosParticiparDialogComponent,
+    EventosSairDialogComponent
   ],
   imports: [
     FormsModule,
@@ -148,6 +152,8 @@ const appRoutes: Routes = [
     NoticiasAdminRemoverDialogComponent,
     EventosNovoDialogComponent,
     EventosDetalheDialogComponent,
+    EventosParticiparDialogComponent,
+    EventosSairDialogComponent,
     MeusEventosDialogComponent,
     MeusEventosRemoverDialogComponent
   ]

@@ -83,4 +83,9 @@ export class EventosComponent implements OnInit {
     });
   }
 
+  validateDate(evento: EventoVO) {
+    let eventDate = new Date(evento.dataEvento);
+    return eventDate > new Date();
+  }
+
 }

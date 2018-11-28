@@ -9,31 +9,33 @@
   <div class="noticias-list">
 
     <div class="default-grid">
-      <div class="col-3" *ngFor="let evento of eventos">
-          <mat-card>
-            <mat-card-header>
-              <mat-card-title>{{evento.titulo}}</mat-card-title>
-              <mat-card-subtitle>{{evento.tipoEvento}} {{evento.distancia}}km {{evento.dataEvento | date:"dd/MM/yyyy"}} - {{evento.horaEvento}}h</mat-card-subtitle>
-              <mat-card-subtitle>{{evento.participantes.length}} Pessoas participando</mat-card-subtitle>
-            </mat-card-header>
-            <div mat-card-image>
-              <img *ngIf="evento.imagem" src="{{evento.imagem}}" alt="{{evento.titulo}}">
-              <img *ngIf="!evento.imagem" src="/assets/images/noticia-default.jpg" alt="">
-            </div>
-            <mat-card-content>
-              <a href="#" class="truncate" matTooltip="{{evento.endereco}}">{{evento.endereco}}</a>
-              <br>
-              <p class="multiline-truncate">
-                {{evento.descricao}}
-              </p>
-            </mat-card-content>
-            <mat-card-actions class="text-center">
-              <button mat-button mat-raised-button color="primary" (click)="detalheEventoDialog(evento)"><i class="material-icons">remove_red_eye</i> Ver mais</button>
-              <button mat-button mat-raised-button *ngIf="!estouParticipando(evento)" color="accent" (click)="participarEventoDialog(evento)"><i class="material-icons">thumb_up</i> Participar</button>
-              <button mat-button mat-raised-button *ngIf="estouParticipando(evento)" color="warn" (click)="sairEventoDialog(evento)"><i class="material-icons">thumb_down</i> Sair</button>
-            </mat-card-actions>
-          </mat-card>
-      </div>
+      <ng-container *ngFor="let evento of eventos">
+        <div class="col-3" *ngIf="validateDate(evento)">
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>{{evento.titulo}}</mat-card-title>
+                <mat-card-subtitle>{{evento.tipoEvento}} {{evento.distancia}}km {{evento.dataEvento | date:"dd/MM/yyyy"}} - {{evento.horaEvento}}h</mat-card-subtitle>
+                <mat-card-subtitle>{{evento.participantes.length}} Pessoas participando</mat-card-subtitle>
+              </mat-card-header>
+              <div mat-card-image>
+                <img *ngIf="evento.imagem" src="{{evento.imagem}}" alt="{{evento.titulo}}">
+                <img *ngIf="!evento.imagem" src="/assets/images/noticia-default.jpg" alt="">
+              </div>
+              <mat-card-content>
+                <a href="#" class="truncate" matTooltip="{{evento.endereco}}">{{evento.endereco}}</a>
+                <br>
+                <p class="multiline-truncate">
+                  {{evento.descricao}}
+                </p>
+              </mat-card-content>
+              <mat-card-actions class="text-center">
+                <button mat-button mat-raised-button color="primary" (click)="detalheEventoDialog(evento)"><i class="material-icons">remove_red_eye</i> Ver mais</button>
+                <button mat-button mat-raised-button *ngIf="!estouParticipando(evento)" color="accent" (click)="participarEventoDialog(evento)"><i class="material-icons">thumb_up</i> Participar</button>
+                <button mat-button mat-raised-button *ngIf="estouParticipando(evento)" color="warn" (click)="sairEventoDialog(evento)"><i class="material-icons">thumb_down</i> Sair</button>
+              </mat-card-actions>
+            </mat-card>
+        </div>
+      </ng-container>
     </div>
     
   </div>

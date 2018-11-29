@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { PerfilService } from './../perfil.service';
 import { PessoaVO } from './../../../base/vo/pessoa';
 import { Component, OnInit, Inject } from '@angular/core';

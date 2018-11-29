@@ -22,9 +22,6 @@ export class NoticiasAdminComponent implements OnInit {
   }
 
   openDialog(noticia) {
-    if(!noticia) {
-      noticia = null;
-    }
 
     const dialogRef = this.dialog.open(NoticiasAdminDialogComponent, {
       data: noticia,

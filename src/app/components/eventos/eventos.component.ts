@@ -34,11 +34,7 @@ export class EventosComponent implements OnInit {
     });
   }
 
-  openDialog(noticia) {
-    if(!noticia) {
-      noticia = null;
-    }
-
+  openDialog() {
     const dialogRef = this.dialog.open(EventosNovoDialogComponent, {
       disableClose: true
     });

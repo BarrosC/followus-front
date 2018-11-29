@@ -10,9 +10,9 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 })
 export class PerfilDialogComponent implements OnInit {
 
-  private pessoa: PessoaVO;
+  public pessoa: PessoaVO;
 
-  constructor(public dialogRef: MatDialogRef<PerfilDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: PessoaVO, public perfilService: PerfilService) { }
+  constructor(public dialogRef: MatDialogRef<PerfilDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: PessoaVO, public perfilService: PerfilService, private router: Router) { }
 
   ngOnInit() {
     this.pessoa = this.data;
@@ -44,7 +44,7 @@ export class PerfilDialogComponent implements OnInit {
       this.perfilService.hideLoader();
       this.perfilService.showSuccess("Usuário atualizado com sucesso");
       this.dialogRef.close();
-      location.reload();
+      this.router.navigate(['/perfil']);
     },
     error => {
       this.perfilService.hideLoader();

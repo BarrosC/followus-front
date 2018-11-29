@@ -39,9 +39,6 @@ export class MeusEventosComponent implements OnInit {
   }
 
   openDialog(evento: EventoVO) {
-    if(!evento) {
-      evento = null;
-    }
 
     const dialogRef = this.dialog.open(MeusEventosDialogComponent, {
       data: evento,

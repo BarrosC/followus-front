@@ -17,6 +17,7 @@ export class SidenavMenuComponent implements OnInit {
   ngOnInit() {
     if(localStorage.getItem("currentUser")) {
       this.recuperarPessoa();
+      console.log("");
     }
   }
 

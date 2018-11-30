@@ -16,7 +16,7 @@
     <li><a routerLink="/eventos" routerLinkActive="active"><i class="material-icons">assignment</i> Eventos</a></li>
     <li><a routerLink="/meus-eventos" routerLinkActive="active"><i class="material-icons">assignment</i> Meus Eventos</a></li>
     <li><a routerLink="/noticias" routerLinkActive="active"><i class="material-icons">speaker_notes</i> Notícias</a></li>
-    <li><a routerLink="/noticiasadmin" routerLinkActive="active"><i class="material-icons">speaker_notes</i> Notícias Admin</a></li>
+    <li *ngIf="pessoa.id === '5bff366c801b40001639660f'"><a routerLink="/noticiasadmin" routerLinkActive="active"><i class="material-icons">speaker_notes</i> Notícias Admin</a></li>
     <li><a routerLink="/perfil" routerLinkActive="active"><i class="material-icons">person</i> Perfil</a></li>
     <li><a href="javascript:void(0)" (click)="sair()"><i class="material-icons">arrow_back</i> Sair</a></li>
   </ul>

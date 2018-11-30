@@ -113,10 +113,10 @@
 }
 
 .mat-card {
-  padding: 24px 12px;
+  padding: 24px 12px !important;
 }
 
 .mat-card-image {
-  width: calc(100% + 24px);
-  margin: 0 -12px 16px -12px;
+  width: calc(100% + 24px) !important;
+  margin: 0 -12px 16px -12px !important;
 }

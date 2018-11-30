@@ -87,7 +87,7 @@
             <ng-container *ngFor="let noticia of noticias; let i = index;">
               <mat-list-item role="listitem" *ngIf="i<3">
                 <a class="card-link" (click)="detalheNoticiaDialog(noticia)">
-                  <p class="truncate text-left" style="max-width: 300px;"><b>{{noticia.titulo}}</b> - {{noticia.subtitulo}}</p>
+                  <p class="truncate text-left"><b>{{noticia.titulo}}</b> - {{noticia.subtitulo}}</p>
                   <i class="material-icons">remove_red_eye</i>
                 </a>
               </mat-list-item>

@@ -42,8 +42,6 @@ export class DashboardComponent implements OnInit {
     this.eventosService.recuperarEventos().subscribe(response => {
       this.eventos = response;
       this.getMyEvents();
-      console.log(response);
-      console.log(this.meusEventos);
     },
     error => {
       this.eventosService.hideLoader();

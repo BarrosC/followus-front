@@ -111,3 +111,12 @@
     width: 100%;
   }
 }
+
+.mat-card {
+  padding: 24px 12px;
+}
+
+.mat-card-image {
+  width: calc(100% + 24px);
+  margin: 0 -12px 16px -12px;
+}
